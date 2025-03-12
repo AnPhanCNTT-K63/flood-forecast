@@ -170,21 +170,6 @@ function App() {
                   "Dùng địa điểm hiện tại"
                 )}
               </Button>
-              <Button
-                onClick={predict}
-                variant="contained"
-                color="success"
-                fullWidth
-                sx={{ mt: 3 }}
-                disabled={!weatherForFloodPrediction}
-              >
-                Dự đoán
-              </Button>
-              {prediction !== null && (
-                <Typography variant="h6" sx={{ mt: 2 }}>
-                  Kết quả: {prediction ? "Nguy hiểm" : "An toàn"}
-                </Typography>
-              )}
             </CardContent>
           </Card>
         </Grid>
@@ -205,6 +190,21 @@ function App() {
                 )}
               </CardContent>
             </Card>
+          )}
+          <Button
+            onClick={predict}
+            variant="contained"
+            color="success"
+            fullWidth
+            sx={{ mt: 3 }}
+            disabled={!weatherForFloodPrediction}
+          >
+            Dự đoán
+          </Button>
+          {prediction !== null && (
+            <Typography variant="h6" sx={{ mt: 2 }}>
+              Kết quả: {prediction ? "Nguy hiểm" : "An toàn"}
+            </Typography>
           )}
         </Grid>
       </Grid>
