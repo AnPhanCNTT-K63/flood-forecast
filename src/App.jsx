@@ -15,8 +15,7 @@ import {
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import SearchIcon from "@mui/icons-material/Search";
 
-const FAST_API_URL =
-  import.meta.env.VITE_FAST_API_URL || "http://127.0.0.1:8000";
+const FAST_API_URL = "http://127.0.0.1:8000";
 
 function App() {
   const [location, setLocation] = useState({ latitude: "", longitude: "" });
@@ -25,6 +24,7 @@ function App() {
     useState(null);
   const [loading, setLoading] = useState(false);
   const [prediction, setPrediction] = useState(null);
+  const [predictLoading, setPredictLoading] = useState(false);
 
   const estimateBrightSunshine = (data) => {
     const sunrise = data.city.sunrise;
@@ -114,15 +114,18 @@ function App() {
   };
 
   const predict = async () => {
+    setPredictLoading(true);
     try {
       const res = await axios.post(
         `${FAST_API_URL}/predict`,
         weatherForFloodPrediction
       );
+      console.log(res.data);
       setPrediction(res.data.Prediction);
     } catch (error) {
       alert("Prediction error: " + error.message);
     }
+    setPredictLoading(false);
   };
 
   return (
@@ -197,9 +200,13 @@ function App() {
             color="success"
             fullWidth
             sx={{ mt: 3 }}
-            disabled={!weatherForFloodPrediction}
+            disabled={!weatherForFloodPrediction || predictLoading}
           >
-            Dự Đoán Khả Năng Xảy Ra Lũ Lụt
+            {predictLoading ? (
+              <CircularProgress size={24} />
+            ) : (
+              "Dự Đoán Khả Năng Xảy Ra Lũ Lụt"
+            )}
           </Button>
           {prediction !== null && (
             <Typography variant="h6" sx={{ mt: 2 }}>
