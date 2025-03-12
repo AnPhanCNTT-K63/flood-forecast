@@ -15,7 +15,8 @@ import {
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import SearchIcon from "@mui/icons-material/Search";
 
-const FAST_API_URL = "http://127.0.0.1:8000";
+const FAST_API_URL =
+  import.meta.env.VITE_OPEN_WEATHER_KEY || "http://127.0.0.1:8000";
 
 function App() {
   const [location, setLocation] = useState({ latitude: "", longitude: "" });
