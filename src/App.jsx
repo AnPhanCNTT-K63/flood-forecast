@@ -199,7 +199,7 @@ function App() {
             sx={{ mt: 3 }}
             disabled={!weatherForFloodPrediction}
           >
-            Dự đoán
+            Dự Đoán Khả Năng Xảy Ra Lũ Lụt
           </Button>
           {prediction !== null && (
             <Typography variant="h6" sx={{ mt: 2 }}>
