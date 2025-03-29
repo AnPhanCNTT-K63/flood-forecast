@@ -51,6 +51,8 @@ This branch contains the React-based web application to interact with the predic
    ```
 4. The web app will be available at `http://localhost:3000`.
 
+   ![image](https://github.com/user-attachments/assets/aaafc488-eefb-4fc4-be33-c732efa31237)
+
 ## Contributing
 Feel free to submit issues and pull requests to improve the project.
 
