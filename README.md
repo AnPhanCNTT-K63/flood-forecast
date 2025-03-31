@@ -18,7 +18,6 @@ This branch contains the backend logic for the flood prediction system, includin
 #### Installation & Usage
 1. Clone the repository and switch to the `api+model` branch:
    ```bash
-   git clone -b api+model https://github.com/your-username/flood-prediction.git
    cd flood-prediction
    ```
 2. Create a virtual environment and install dependencies:
