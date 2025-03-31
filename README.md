@@ -1,10 +1,11 @@
 # Flood Prediction Project
+View production at: [flood-forecast-roan.vercel.app](https://flood-forecast-roan.vercel.app/)
 
 ## Overview
 This project aims to predict floods using machine learning models based on past data. It consists of two main branches:
 - **api+model**: Includes the dataset, trained model, FastAPI server, and Jupyter notebook for model training.
 - **frontend**: A React-based web application to visualize flood predictions.
-
+  
 ## Branches
 ### 1. `api+model`
 This branch contains the backend logic for the flood prediction system, including:
@@ -17,7 +18,6 @@ This branch contains the backend logic for the flood prediction system, includin
 #### Installation & Usage
 1. Clone the repository and switch to the `api+model` branch:
    ```bash
-   git clone -b api+model https://github.com/your-username/flood-prediction.git
    cd flood-prediction
    ```
 2. Create a virtual environment and install dependencies:
